@@ -1,0 +1,56 @@
+<h2 class="contact__title">Entre em contato</h2>
+<section class="contact__container">
+    <form class="contact-form" [formGroup]="formContact">
+        <input 
+        type="text" 
+        placeholder="Digite seu Nome"
+        formControlName="name"
+        [class.valid]="formContact.controls['name'].valid"
+        [class.invalid]="formContact.controls['name'].invalid &&
+        (formContact.controls['name'].touched || formContact.controls['name'].dirty)"
+        >
+        <div *ngIf="formContact.controls['name'].invalid &&
+        (formContact.controls['name'].touched || formContact.controls['name'].dirty)"
+        >
+        <small class="error-message" *ngIf="formContact.controls['name'].hasError('minlength')">
+            Esse campo precisa de no minimo 4 caracteres.
+        </small>
+        <small class="error-message" *ngIf="formContact.controls['name'].hasError('required')">
+            Esse campo precisa ser preenchido.
+        </small>
+        </div>
+
+        <input 
+        type="text" 
+        placeholder="Digite o Assunto "
+        formControlName="subject"
+        [class.valid]="formContact.controls['subject'].valid"
+        [class.invalid]="formContact.controls['subject'].invalid &&
+        (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"
+        >
+
+        <div *ngIf="formContact.controls['subject'].invalid &&
+        (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"
+        >
+        <small class="error-message" *ngIf="formContact.controls['subject'].hasError('minlength')">
+            Esse campo precisa de no minimo 10 caracteres.
+        </small>
+        <small class="error-message" *ngIf="formContact.controls['subject'].hasError('required')">
+            Esse campo precisa ser preenchido.
+        </small>
+        </div>        
+
+        <input 
+        type="tel" 
+        placeholder="(99) 9 9999-9999"
+        />
+
+        <input type="text" placeholder="Digite o Email ">
+        <textarea maxlength="300" placeholder="Envie uma mensagem"></textarea>
+        <button>Enviar</button>
+    </form>
+    <address>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234083.38481390625!2d-46.89589017499999!3d-23.548578499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59aa7f863793%3A0x3aed6bf8e77196df!2sMuseu%20da%20Cidade%20de%20S%C3%A3o%20Paulo%20%2F%20Solar%20da%20Marquesa%20de%20Santos!5e0!3m2!1spt-BR!2sbr!4v1654963803287!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>R. Roberto Simonsen, 136 - Centro Histórico de São Paulo, São Paulo - SP, 01017-020</p>
+    </address>
+</section>
