@@ -1,0 +1,29 @@
+<header class="main-header">
+    <h1 class="main-header__title">
+        <span class="main-header__title--blue">FX</span><span class="main-header__title--orange">Variedades</span>
+    </h1>
+    <div class="container-menu">
+        <nav class="main-header__menu">
+            <ul>
+                <li><a routerLink="products">Inicio</a></li>
+                <li><a>Automotivo</a></li>
+                <li><a>Tecnologia</a></li>
+                <li><a>Eletrodomesticos</a></li>
+                <li><a>Bombas</a></li>
+                <li><a>
+                    <i class="fa-solid fa-envelope-open"></i>
+                    Contato
+                </a></li>
+                <li><a routerLink="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Carrinho
+                        <span class="badge-carrinho">{{ cartService.itensCart().length }}</span>                    
+                </a></li>
+            </ul>
+        </nav>
+        <form class="search-form">
+            <input type="text">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</header>
